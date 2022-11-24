@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Erorrs</title>
+    <link rel="stylesheet" href="./css/atom-one-dark.css">
+</head>
+<body>
+   
+    <a href="https://stackoverflow.com/questions/36897877/gulp-error-the-following-tasks-did-not-complete-did-you-forget-to-signal-async" target="_blank" rel="noopener noreferrer">
+        <h1>
+            Gulp error: The following tasks did not complete: Did you forget to signal async completion?
+        </h1>
+    </a>
+    <h3><b>3. Call the callback function</b></h3>
+    <p>
+        This is probably the easiest way for 
+        your use case: gulp automatically 
+        passes a callback function to your 
+        task as its first argument. 
+        Just call that function when you're done:
+    </p>
+    <pre>
+        <code class="language-js hljs">
+            gulp.task('message', function(done) {
+                console.log("HTTP Server Started");
+                done();
+              });
+
+              gulp.task('default', function(done) {
+                console.log("HTTP Server Started");
+                done();
+              });
+        </code>
+        
+    </pre>
+
+    <pre>
+        <code class="language-shell hljs">
+naasy@DESKTOP-EF0CMN2 MINGW64 ~/Desktop/TEST LAB/sm/side-menu-completed
+$ gulp message
+[16:33:49] Using gulpfile ~\Desktop\TEST LAB\sm\side-menu-completed\gulpfile.js
+[16:33:49] Starting 'message'...
+Gulp is running...
+[16:33:49] The following tasks did not complete: message
+[16:33:49] Did you forget to signal async completion?
+
+naasy@DESKTOP-EF0CMN2 MINGW64 ~/Desktop/TEST LAB/sm/side-menu-completed
+$ gulp message
+[16:34:19] Using gulpfile ~\Desktop\TEST LAB\sm\side-menu-completed\gulpfile.js
+[16:34:19] Starting 'message'...
+Gulp is running...
+[16:34:20] The following tasks did not complete: message
+[16:34:20] Did you forget to signal async completion?
+
+naasy@DESKTOP-EF0CMN2 MINGW64 ~/Desktop/TEST LAB/sm/side-menu-completed
+$ gulp
+[16:35:34] Using gulpfile ~\Desktop\TEST LAB\sm\side-menu-completed\gulpfile.js
+[16:35:34] Starting 'default'...
+Gulp is running...
+[16:35:34] The following tasks did not complete: default
+[16:35:34] Did you forget to signal async completion?
+
+naasy@DESKTOP-EF0CMN2 MINGW64 ~/Desktop/TEST LAB/sm/side-menu-completed
+$ gulp
+[16:56:34] Using gulpfile ~\Desktop\TEST LAB\sm\side-menu-completed\gulpfile.js
+[16:56:34] Starting 'default'...
+HTTP Server Started
+[16:56:34] Finished 'default' after 7.44 ms
+
+naasy@DESKTOP-EF0CMN2 MINGW64 ~/Desktop/TEST LAB/sm/side-menu-completed
+$ gulp message
+[16:56:39] Using gulpfile ~\Desktop\TEST LAB\sm\side-menu-completed\gulpfile.js
+[16:56:39] Starting 'message'...
+HTTP Server Started
+[16:56:39] Finished 'message' after 7.69 ms
+
+naasy@DESKTOP-EF0CMN2 MINGW64 ~/Desktop/TEST LAB/sm/side-menu-completed
+$
+        </code>
+    </pre>
+
+    <script src="./js/highlight.min.js"></script>
+    <script>hljs.highlightAll();</script>
+   
+</body>
+</html>

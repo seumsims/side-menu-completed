@@ -1,0 +1,72 @@
+.navMenuBar {
+    color: #fe9c0a !important;
+    font-size: 1.25rem !important;
+}
+
+.nav-menu-item {
+    text-decoration: none;
+    color: rgb(255, 5, 5);
+}
+
+.nav-menu-item:hover {
+    text-decoration: none;
+    color: rgb(255, 5, 5);
+    border-left: 5px solid white;
+    transition: 0.1s;
+}
+
+.sideNavOpen {
+    height: 100%;
+    width: 220px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    overflow-x: hidden;
+    padding-left: 18px;
+    padding-top: 20px;
+    transition: 0.1s;
+    background-color: #ffffff;
+    border-right: .2rem solid #ff4c4c;
+
+}
+
+.sideNavClose {
+    height: 100%;
+    width: 60px;
+    /* visibility: hidden; */
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    overflow-x: hidden;
+    padding-left: 18px;
+    padding-top: 20px;
+    transition: 0.1s;
+    background-color: #cbcbcb;
+    border-right: .2rem solid #ff4c4c;
+
+
+}
+
+.ContentOverlay {
+    display: block;
+    position: fixed;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 7;
+    right: 0;
+    bottom: 0;
+    cursor: zoom-in;
+    background-color: rgba(255, 2, 2, 0.5);
+}
+
+.ContentOverlayClose {
+    display: none;
+}
+
+.Content {
+    z-index: 5;
+    margin-top: 60px;
+}
